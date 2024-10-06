@@ -1,0 +1,23 @@
+{
+  "name": "thunder-note",
+  "version": "1.0.0",
+  "description": "A notes app linked with a database",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pROmeTEuL/Thunder-Note.git"
+  },
+  "author": "pROmeTEuL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pROmeTEuL/Thunder-Note/issues"
+  },
+  "homepage": "https://github.com/pROmeTEuL/Thunder-Note#readme",
+  "devDependencies": {
+    "electron": "^32.1.2"
+  }
+}
