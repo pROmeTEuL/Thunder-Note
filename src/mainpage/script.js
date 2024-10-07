@@ -51,8 +51,7 @@ async function renderNotes() {
 }
 
 function openNote(noteId) {
-  alert(`Opening note with ID: ${noteId}`);
-  console.log("Add note opening logic!!!");
+  window.location.assign(`../notepage/page.html?id=${noteId}`);
 }
 
 renderNotes();
