@@ -1,4 +1,5 @@
 const noteContainer = document.getElementById('note-container');
+const editButton = document.getElementById('edit-button');
 
 function getNote() {
     var id = window.location.search.split('=')[1];
@@ -18,6 +19,10 @@ function renderNote(note) {
         <p class="note-content">${note.content}</p>
         <p class="note-time">${note.time}</p>
     `;
+}
+
+function goBack() {
+    window.history.back();
 }
 
 renderNote(getNote());
