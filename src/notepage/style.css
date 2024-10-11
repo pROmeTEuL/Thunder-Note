@@ -26,16 +26,22 @@ body {
 }
 
 .edit-button {
-    max-width: 600px;
-    margin: var(--edit-button-top-margin) var(--horizontal-margin);
+    width: 100%;
+    margin-top: var(--edit-button-top-margin);
     padding: 10px;
     background-color: #4a4b4f;
+    color: #fff;
+}
+
+.aligner {
+    max-width: 600px;
+    margin: var(--container-top-margin) var(--horizontal-margin);
 }
 
 .container {
-    max-width: 600px;
-    margin: var(--container-top-margin) var(--horizontal-margin);
+    width: 100%;
     padding: 10px;
+    margin-top: var(--container-top-margin);
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
