@@ -1,3 +1,8 @@
+:root {
+  --horizontal-margin: 50px;
+  --container-top-margin: 50px;
+}
+
 body {
   font-family: "Bradley Hand", cursive;
   /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;*/
@@ -7,8 +12,8 @@ body {
 }
 
 .container {
-  max-width: 600px;
-  margin: 50px auto;
+  max-width: auto;
+  margin: var(--container-top-margin) var(--horizontal-margin);
   padding: 10px;
   background-color: white;
   border-radius: 8px;

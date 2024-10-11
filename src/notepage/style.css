@@ -1,5 +1,5 @@
 :root {
-    --horizontal-margin: auto;
+    --horizontal-margin: 50px;
     --container-top-margin: 50px;
     --edit-button-top-margin: 10px;
 }
@@ -34,7 +34,7 @@ body {
 }
 
 .aligner {
-    max-width: 600px;
+    max-width: auto;
     margin: var(--container-top-margin) var(--horizontal-margin);
 }
 
