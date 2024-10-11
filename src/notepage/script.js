@@ -1,5 +1,4 @@
 const noteContainer = document.getElementById('note-container');
-const editButton = document.getElementById('edit-button');
 
 function getNote() {
     var id = window.location.search.split('=')[1];
@@ -23,6 +22,11 @@ function renderNote(note) {
 
 function goBack() {
     window.history.back();
+}
+
+function editNote() {
+    var id = window.location.search.split('=')[1];
+    window.location.assign(`../editpage/page.html?id=${id}`);
 }
 
 renderNote(getNote());
