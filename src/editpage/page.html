@@ -9,15 +9,29 @@
         <button class="back-button" onclick="goBack()">&#8592;</button>
         <div class="aligner">
             <div class="container" id="note-container">
+                <table style="width: 100%;">
+                    <tr>
+                        <td id="title-td" style="width: 100%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="content-td" style="width: 100%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="date-td" style="width: 100%;">
+                        </td>
+                    </tr>
+                </table>
                 <!-- Populated by editpage/script.js :) -->
             </div>
             <table style="width: 100%;">
             <tr>
             <td style="width: 50%;">
-                <button class="cancel-button">&#10007;</button>
+                <button class="cancel-button" onclick="cancelEdit()">&#10007;</button>
             </td>
             <td style="width: 50%;">
-                <button class="done-button">&#10003;</button>
+                <button class="done-button" onclick="doneEdit()">&#10003;</button>
             </td>
             </tr>
             </table>
