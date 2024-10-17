@@ -54,4 +54,4 @@ function openNote(noteId) {
   window.location.assign(`../notepage/page.html?id=${noteId}`);
 }
 
-renderNotes();
+window.onload = renderNotes;

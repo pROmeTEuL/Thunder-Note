@@ -1,3 +1,4 @@
+const { ipcRenderer } = require('electron');
 const container = document.getElementById('note-container');
 
 const title_td = document.getElementById('title-td');
@@ -41,30 +42,34 @@ function editNote() {
 }
 
 function cancelEdit() {
-    window.history.back();
+    const noteId = window.location.search.split('=')[1];
+    window.location.assign(`../notepage/page.html?id=${noteId}`);
 }
 
 function doneEdit() {
+    const noteId = window.location.search.split('=')[1];
     if (changed) {
         date.textContent = new Date().toLocaleString();
-        const noteId = window.location.search.split('=')[1];
         // api.post(`/notes/${noteId}`, {
         //     title: title.value,
         //     content: content.value
         //     time: date.textContent
         // });
     }
-    window.history.back();
+    window.location.assign(`../notepage/page.html?id=${noteId}`);
 }
 
 function goBack() {
+    const noteId = window.location.search.split('=')[1];
     if (changed) {
-        if (confirm('Are you sure you want to go back? Your changes will be lost.')) {
-            window.history.back();
-        }
+        ipcRenderer.invoke('show-confirm-dialog').then(result => {
+            if (result.response === 0) { // 'Yes' was clicked
+                window.location.assign(`../notepage/page.html?id=${noteId}`);
+            }
+        });
     } else {
-        window.history.back();
+        window.location.assign(`../notepage/page.html?id=${noteId}`);
     }
 }
 
-editNote();
+window.onload = editNote;

@@ -21,7 +21,7 @@ function renderNote(note) {
 }
 
 function goBack() {
-    window.history.back();
+    window.location.assign('../mainpage/page.html');
 }
 
 function editNote() {
@@ -29,4 +29,4 @@ function editNote() {
     window.location.assign(`../editpage/page.html?id=${id}`);
 }
 
-renderNote(getNote());
+window.onload = () => renderNote(getNote());
