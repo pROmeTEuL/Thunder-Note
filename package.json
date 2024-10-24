@@ -1,6 +1,7 @@
 {
   "name": "thunder-note",
   "version": "1.0.0",
+  "type": "module",
   "description": "A notes app linked with a database",
   "main": "main.js",
   "scripts": {

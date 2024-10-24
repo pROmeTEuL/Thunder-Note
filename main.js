@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+import { app, BrowserWindow } from 'electron';
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
@@ -23,7 +23,7 @@ app.on("window-all-closed", () => {
 });
 app.setName("Thunder Note");
 
-const { ipcMain, dialog } = require('electron');
+import { ipcMain, dialog } from 'electron';
 
 ipcMain.handle('show-confirm-dialog', async (event) => {
     const options = {
@@ -37,3 +37,7 @@ ipcMain.handle('show-confirm-dialog', async (event) => {
     const response = await dialog.showMessageBox(null, options);
     return response;
 });
+
+import { api } from './api/api.js';
+
+api.get('/').then(console.log);
