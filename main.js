@@ -1,4 +1,6 @@
 import { app, BrowserWindow } from 'electron';
+import log from 'electron-log';
+
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
@@ -38,6 +40,12 @@ ipcMain.handle('show-confirm-dialog', async (event) => {
     return response;
 });
 
-import { api } from './api/api.js';
+ipcMain.on('log', (event, message) => {
+  log.info(message); // or log.error, log.warn, depending on the type of log
+});
+
+/*
+import { api } from './src/api/api.js';
 
 api.get('/').then(console.log);
+*/

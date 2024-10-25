@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/pROmeTEuL/Thunder-Note#readme",
   "devDependencies": {
-    "electron": "^32.1.2"
+    "electron": "^32.1.2",
+    "electron-log": "^5.2.0"
   }
 }

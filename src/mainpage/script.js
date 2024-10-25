@@ -1,3 +1,12 @@
+import api from "../api/api.js";
+const { ipcRenderer } = require('electron');
+
+function log(message) {
+  ipcRenderer.send("log", message);
+}
+
+log('Main page loaded');
+
 async function fetchNotes() {
   return api.get("/");
 }
