@@ -37,6 +37,21 @@ class Api {
         }
         throw new Error(`Delete error: ${res.status}`);
     }
+
+    async put(url, data) {
+        const res = await fetch(this._baseUrl + url, {
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (res.ok) {
+            const responseData = await res.json();
+            return responseData;
+        }
+        throw new Error(`Put error: ${res.status}`);
+    }
 }
 
 export const api = new Api({
