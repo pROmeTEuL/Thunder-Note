@@ -27,7 +27,14 @@ function editNote() {
     window.location.assign(`../editpage/page.html?id=${id}`);
 }
 
+function deleteNote() {
+    var id = window.location.search.split('=')[1];
+    api.delete(`/${id}`);
+    window.location.assign('../mainpage/page.html');
+}
+
 document.getElementById('back-button').addEventListener('click', goBack);
 document.getElementById('edit-button').addEventListener('click', editNote);
+document.getElementById('delete-button').addEventListener('click', deleteNote);
 
 window.onload = () => renderNote();
