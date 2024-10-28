@@ -25,7 +25,8 @@ body {
     background-color: #f0f0f5;
 }
 
-.cancel-button, .done-button {
+.cancel-button,
+.done-button {
     width: 100%;
     margin-top: var(--buttons-top-margin);
     padding: 10px;
@@ -54,7 +55,7 @@ body {
     vertical-align: top;
 }
 
-.note-content {
+.note-body {
     font-size: 14px;
     color: #2c2c37;
     margin-top: 5px;
