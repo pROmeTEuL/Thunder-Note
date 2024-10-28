@@ -31,4 +31,14 @@ function openNote(noteId) {
   window.location.assign(`../notepage/page.html?id=${noteId}`);
 }
 
+async function addNote() {
+  api.post('/', {
+    title: 'New Note',
+    body: '',
+  });
+  window.location.assign('./page.html');
+}
+
+document.getElementById("add-button").addEventListener("click", addNote);
+
 window.onload = renderNotes;
