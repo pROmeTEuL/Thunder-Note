@@ -13,7 +13,7 @@ async function renderNote() {
     let note = await getNote();
     noteContainer.innerHTML = `
         <p class="note-title">${note.title}</p>
-        <p class="note-content">${note.body}</p>
+        <p class="note-body">${note.body}</p>
         <p class="note-time">${note.date}</p>
     `;
 }
