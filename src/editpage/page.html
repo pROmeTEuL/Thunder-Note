@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Editpage</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <button class="back-button" onclick="goBack()">&#8592;</button>
-        <div class="aligner">
-            <div class="container" id="note-container">
-                <table style="width: 100%;">
-                    <tr>
-                        <td id="title-td" style="width: 100%;">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="content-td" style="width: 100%;">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="date-td" style="width: 100%;">
-                        </td>
-                    </tr>
-                </table>
-                <!-- Populated by editpage/script.js :) -->
-            </div>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button id="back-button" class="back-button">&#8592;</button>
+    <div class="aligner">
+        <div class="container" id="note-container">
             <table style="width: 100%;">
-            <tr>
-            <td style="width: 50%;">
-                <button class="cancel-button" onclick="cancelEdit()">&#10007;</button>
-            </td>
-            <td style="width: 50%;">
-                <button class="done-button" onclick="doneEdit()">&#10003;</button>
-            </td>
-            </tr>
+                <tr>
+                    <td id="title-td" style="width: 100%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="content-td" style="width: 100%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="date-td" style="width: 100%;">
+                    </td>
+                </tr>
             </table>
+            <!-- Populated by editpage/script.js :) -->
         </div>
-    </body>
-    <script type="module" src="script.js"></script>
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 50%;">
+                    <button id="cancel-button" class="cancel-button">&#10007;</button>
+                </td>
+                <td style="width: 50%;">
+                    <button id="done-button" class="done-button">&#10003;</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script type="module" src="script.js"></script>
+
 </html>

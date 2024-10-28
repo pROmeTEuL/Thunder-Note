@@ -72,4 +72,8 @@ function goBack() {
     }
 }
 
+document.getElementById('back-button').addEventListener('click', goBack);
+document.getElementById('cancel-button').addEventListener('click', cancelEdit);
+document.getElementById('done-button').addEventListener('click', doneEdit);
+
 window.onload = editNote;

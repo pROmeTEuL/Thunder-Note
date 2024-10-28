@@ -40,5 +40,5 @@ class Api {
 }
 
 export const api = new Api({
-    baseUrl: 'http://localhost:8000/', // I'll add the server URL later
+    baseUrl: 'http://localhost:8000', // I'll add the server URL later
 });
