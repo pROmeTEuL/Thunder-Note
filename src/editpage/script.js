@@ -14,7 +14,7 @@ title.classList.add('note-title');
 
 const body = document.createElement('textarea');
 body.style.resize = 'none';
-title.classList.add('note-body');
+body.classList.add('note-body');
 
 const date = document.createElement('p');
 date.classList.add('note-time');
