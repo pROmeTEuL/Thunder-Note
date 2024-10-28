@@ -31,6 +31,8 @@ body {
     padding: 10px;
     background-color: #4a4b4f;
     color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .delete-button {
@@ -39,6 +41,8 @@ body {
     padding: 10px;
     background-color: #570c07;
     color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .aligner {
