@@ -33,6 +33,14 @@ body {
     color: #fff;
 }
 
+.delete-button {
+    width: 100%;
+    margin-top: var(--edit-button-top-margin);
+    padding: 10px;
+    background-color: #570c07;
+    color: #fff;
+}
+
 .aligner {
     max-width: auto;
     margin: var(--container-top-margin) var(--horizontal-margin);

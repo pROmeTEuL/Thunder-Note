@@ -30,8 +30,15 @@ body {
     width: 100%;
     margin-top: var(--buttons-top-margin);
     padding: 10px;
-    background-color: #4a4b4f;
     color: #fff;
+}
+
+.cancel-button {
+    background-color: #570c07;
+}
+
+.done-button {
+    background-color: #09640e;
 }
 
 .aligner {
