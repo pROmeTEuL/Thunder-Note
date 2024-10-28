@@ -12,10 +12,10 @@ async function renderNotes() {
     const noteItem = document.createElement("div");
     noteItem.classList.add("note-item");
     noteItem.setAttribute("id", `note-${note.id}`);
-
+    let noteTruncate = note.body.length > 30 ? note.body.substring(0, 30) + '...' : note.body;
     noteItem.innerHTML = `
         <p class="note-title">${note.title}</p>
-        <p class="note-preview">${note.body}</p>
+        <p class="note-preview">${noteTruncate}</p>
         <p class="note-time">${note.date}</p>
       `;
 
