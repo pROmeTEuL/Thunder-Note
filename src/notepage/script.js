@@ -1,6 +1,8 @@
 import { api } from '../api/api.js';
 import { log } from '../debugtools/log.js';
 
+const { ipcRenderer } = require('electron');
+
 const noteContainer = document.getElementById('note-container');
 
 async function getNote() {
@@ -28,9 +30,13 @@ function editNote() {
 }
 
 function deleteNote() {
-    var id = window.location.search.split('=')[1];
-    api.delete(`/${id}`);
-    window.location.assign('../mainpage/page.html');
+    ipcRenderer.invoke('show-back-confirm-dialog').then(result => {
+        if (result.response === 0) { // 'Yes' was clicked
+            var id = window.location.search.split('=')[1];
+            api.delete(`/${id}`);
+            window.location.assign('../mainpage/page.html');
+        }
+    });
 }
 
 document.getElementById('back-button').addEventListener('click', goBack);

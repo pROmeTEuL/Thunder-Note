@@ -8,7 +8,7 @@ const createWindow = () => {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-  }
+    }
   });
   win.loadFile("src/mainpage/page.html");
 };
@@ -27,17 +27,30 @@ app.setName("Thunder Note");
 
 import { ipcMain, dialog } from 'electron';
 
-ipcMain.handle('show-confirm-dialog', async (event) => {
-    const options = {
-        type: 'question',
-        buttons: ['Yes', 'No'],
-        defaultId: 1,
-        title: 'Confirm',
-        message: 'Are you sure you want to go back? Your changes will be lost.',
-    };
+ipcMain.handle('show-back-confirm-dialog', async (event) => {
+  const options = {
+    type: 'question',
+    buttons: ['Yes', 'No'],
+    defaultId: 1,
+    title: 'Confirm',
+    message: 'Are you sure you want to go back? Your changes will be lost.',
+  };
 
-    const response = await dialog.showMessageBox(null, options);
-    return response;
+  const response = await dialog.showMessageBox(null, options);
+  return response;
+});
+
+ipcMain.handle('show-delete-confirm-dialog', async (event) => {
+  const options = {
+    type: 'question',
+    buttons: ['Yes', 'No'],
+    defaultId: 1,
+    title: 'Confirm',
+    message: 'Are you sure you want to delete this note? This process is irreversible.',
+  };
+
+  const response = await dialog.showMessageBox(null, options);
+  return response;
 });
 
 ipcMain.on('log', (event, message) => {

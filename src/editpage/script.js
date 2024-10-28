@@ -64,7 +64,7 @@ function doneEdit() {
 function goBack() {
     const noteId = window.location.search.split('=')[1];
     if (changed) {
-        ipcRenderer.invoke('show-confirm-dialog').then(result => {
+        ipcRenderer.invoke('show-back-confirm-dialog').then(result => {
             if (result.response === 0) { // 'Yes' was clicked
                 window.location.assign(`../notepage/page.html?id=${noteId}`);
             }
