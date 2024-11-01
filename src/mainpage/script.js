@@ -13,6 +13,7 @@ async function renderNotes() {
     noteItem.classList.add("note-item");
     noteItem.setAttribute("id", `note-${note.id}`);
     let noteTruncate = note.body.length > 30 ? note.body.substring(0, 30) + '...' : note.body;
+    note.date = note.date.substring(0, note.date.length - 3);
     noteItem.innerHTML = `
         <p class="note-title">${note.title}</p>
         <p class="note-preview">${noteTruncate}</p>

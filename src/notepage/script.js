@@ -13,6 +13,7 @@ async function getNote() {
 
 async function renderNote() {
     let note = await getNote();
+    note.date = note.date.substring(0, note.date.length - 3);
     noteContainer.innerHTML = `
         <p class="note-title">${note.title}</p>
         <p class="note-body">${note.body}</p>

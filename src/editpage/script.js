@@ -37,6 +37,7 @@ async function editNote() {
     const note = await api.get(`/${noteId}`);
     title.value = note.title;
     body.value = note.body;
+    note.date = note.date.substring(0, note.date.length - 3);
     date.textContent = note.date;
     title_td.appendChild(title);
     body_td.appendChild(body);
