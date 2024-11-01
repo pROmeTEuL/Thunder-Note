@@ -1,6 +1,7 @@
 :root {
   --horizontal-margin: 50px;
-  --container-top-margin: 50px;
+  --container-top-margin: 10px;
+  --add-button-top-margin: 10px;
 }
 
 body {
@@ -11,10 +12,27 @@ body {
   background-color: #f5f5f7;
 }
 
-.container {
+.aligner {
   max-width: auto;
   margin: var(--container-top-margin) var(--horizontal-margin);
+}
+
+.add-button {
+  width: 100%;
+  height: 30px;
+  margin-top: var(--add-button-top-margin);
+  background-color: #007aff;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 100%;
+  height: auto;
   padding: 10px;
+  margin-top: var(--container-top-margin);
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

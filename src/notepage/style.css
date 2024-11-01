@@ -31,6 +31,18 @@ body {
     padding: 10px;
     background-color: #4a4b4f;
     color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.delete-button {
+    width: 100%;
+    margin-top: var(--edit-button-top-margin);
+    padding: 10px;
+    background-color: #570c07;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .aligner {
@@ -40,6 +52,7 @@ body {
 
 .container {
     width: 100%;
+    height: auto;
     padding: 10px;
     margin-top: var(--container-top-margin);
     background-color: white;
@@ -54,7 +67,7 @@ body {
     vertical-align: top;
 }
 
-.note-content {
+.note-body {
     font-size: 14px;
     color: #2c2c37;
     margin-top: 5px;

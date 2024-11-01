@@ -1,22 +1,23 @@
+import { api } from '../api/api.js';
+import { log } from '../debugtools/log.js';
+
+const { ipcRenderer } = require('electron');
+
 const noteContainer = document.getElementById('note-container');
 
-function getNote() {
+async function getNote() {
     var id = window.location.search.split('=')[1];
-    //return api.get(`/note/${id}`);
-    return {
-        id: 2,
-        title: "Grocery List",
-        preview: "Milk, bread, eggs, butter, tomatoes, spinach, chicken breast...",
-        content: "Large content (I'm lazy :P)",
-        time: "Yesterday • October 5, 2024",
-    };
+    log(`id: ${id}`);
+    return await api.get(`/${id}`);
 }
 
-function renderNote(note) {
+async function renderNote() {
+    let note = await getNote();
+    note.date = note.date.substring(0, note.date.length - 3);
     noteContainer.innerHTML = `
         <p class="note-title">${note.title}</p>
-        <p class="note-content">${note.content}</p>
-        <p class="note-time">${note.time}</p>
+        <p class="note-body">${note.body}</p>
+        <p class="note-time">${note.date}</p>
     `;
 }
 
@@ -29,4 +30,18 @@ function editNote() {
     window.location.assign(`../editpage/page.html?id=${id}`);
 }
 
-window.onload = () => renderNote(getNote());
+function deleteNote() {
+    ipcRenderer.invoke('show-back-confirm-dialog').then(result => {
+        if (result.response === 0) { // 'Yes' was clicked
+            var id = window.location.search.split('=')[1];
+            api.delete(`/${id}`);
+            window.location.assign('../mainpage/page.html');
+        }
+    });
+}
+
+document.getElementById('back-button').addEventListener('click', goBack);
+document.getElementById('edit-button').addEventListener('click', editNote);
+document.getElementById('delete-button').addEventListener('click', deleteNote);
+
+window.onload = () => renderNote();

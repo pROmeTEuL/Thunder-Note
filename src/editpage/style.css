@@ -25,12 +25,22 @@ body {
     background-color: #f0f0f5;
 }
 
-.cancel-button, .done-button {
+.cancel-button,
+.done-button {
     width: 100%;
     margin-top: var(--buttons-top-margin);
     padding: 10px;
-    background-color: #4a4b4f;
     color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cancel-button {
+    background-color: #570c07;
+}
+
+.done-button {
+    background-color: #09640e;
 }
 
 .aligner {
@@ -45,6 +55,7 @@ body {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto;
 }
 
 .note-title {
@@ -52,12 +63,15 @@ body {
     font-weight: 600;
     margin: 0 0 5px;
     vertical-align: top;
+    width: 100%;
 }
 
-.note-content {
+.note-body {
     font-size: 14px;
     color: #2c2c37;
     margin-top: 5px;
+    width: 100%;
+    height: 300px;
 }
 
 .note-time {

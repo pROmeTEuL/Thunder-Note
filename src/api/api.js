@@ -1,50 +1,59 @@
 class Api {
-    constructor({ baseUrl, headers }) {
+    constructor({ baseUrl }) {
         this._baseUrl = baseUrl;
-        this._headers = headers;
     }
 
     async get(url) {
-        return fetch(this._baseUrl + url, {
-            headers: this._headers
-        })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Get error: ${res.status}`);
-        })
+        const res = await fetch(this._baseUrl + url);
+        if (res.ok) {
+            const data = await res.json();
+            return data;
+        }
+        throw new Error(`Get error: ${res.status}`);
     }
 
     async post(url, data) {
-        return fetch(this._baseUrl + url, {
+        const res = await fetch(this._baseUrl + url, {
             method: 'POST',
-            headers: this._headers,
-            body: JSON.stringify(data)
-        })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
             }
-            return Promise.reject(`Post error: ${res.status}`);
-        })
+        });
+        if (res.ok) {
+            const responseData = await res.json();
+            return responseData;
+        }
+        throw new Error(`Post error: ${res.status}`);
     }
 
     async delete(url) {
         const res = await fetch(this._baseUrl + url, {
             method: 'DELETE',
-            headers: this._headers
         });
         if (res.ok) {
-            return res.json();
+            const responseData = await res.json();
+            return responseData;
         }
-        return await Promise.reject(`Delete error: ${res.status}`);
+        throw new Error(`Delete error: ${res.status}`);
+    }
+
+    async put(url, data) {
+        const res = await fetch(this._baseUrl + url, {
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (res.ok) {
+            const responseData = await res.json();
+            return responseData;
+        }
+        throw new Error(`Put error: ${res.status}`);
     }
 }
 
 export const api = new Api({
-    baseUrl: '', // I'll add the server URL later
-    headers: {
-        authorization
-    }
+    baseUrl: 'http://localhost:8000/api/v1/notes', // Put the server url instead
 });

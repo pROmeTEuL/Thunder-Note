@@ -8,14 +8,15 @@
 </head>
 
 <body>
-    <button class="back-button" onclick="goBack()">&#8592;</button>
+    <button id="back-button" class="back-button">&#8592;</button>
     <div class="aligner">
         <div class="container" id="note-container">
             <!-- Populated by notepage/script.js :) -->
         </div>
-        <button class="edit-button" onclick="editNote()">&#9998;</button>
+        <button id="edit-button" class="edit-button">&#9998;</button>
+        <button id="delete-button" class="delete-button">&#10006;</button>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
