@@ -31,7 +31,7 @@ function editNote() {
 }
 
 function deleteNote() {
-    ipcRenderer.invoke('show-back-confirm-dialog').then(result => {
+    ipcRenderer.invoke('show-delete-confirm-dialog').then(result => {
         if (result.response === 0) { // 'Yes' was clicked
             var id = window.location.search.split('=')[1];
             api.delete(`/${id}`);
